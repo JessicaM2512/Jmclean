@@ -653,7 +653,7 @@ button:focus {
 ========================*/
 
 .footer {
-    padding: 70px 0px;
+    padding:0;
     background-color: #000 !important;
 }
 

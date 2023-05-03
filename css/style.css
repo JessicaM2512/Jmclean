@@ -844,7 +844,7 @@ ul.pattern .color6 {
     background:#f2b31a;
 }
 
-@media only screen and (max-width:479px) {
+@media only screen and (max-width:579px) {
     #color-switcher {
         display: none;
     }

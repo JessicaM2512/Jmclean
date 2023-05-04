@@ -343,7 +343,7 @@ button:focus {
 }
 
 .header-name {
-    font-size: 30px;
+    font-size: 38px;
 }
 .header-desc {
     max-width: 500px;
@@ -728,7 +728,7 @@ button:focus {
         line-height: 15px;
     }
     .header-name {
-        font-size: 35px;
+        font-size: 33px;
     }
     .clip-home{
         clip-path: none;

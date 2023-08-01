@@ -1,3 +1,3 @@
 # Jmclean
 Meu site
-Esse foi o projeto onde eu aprendi a fazer...
+Esse foi o projeto uma experiencia de trabalho

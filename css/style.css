@@ -56,7 +56,7 @@ button:focus {
     background: rgba(166, 175, 189, 0.3);
 }
 
-:-moz-selection {
+::-moz-selection {
     background: rgba(166, 175, 189, 0.3);
 }
 
@@ -179,7 +179,6 @@ button:focus {
     padding-bottom: 100px;
     position: relative;
     background-color: #fff;
-    
 }
 
 .h-100vh {
@@ -199,28 +198,20 @@ button:focus {
 }
 
 .btn {
-    padding: 16px 32px;
+    padding: 15px 32px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     transition: all 0.5s;
     letter-spacing: 0.8px;
     color: #fff;
-    box-shadow: none;
+    box-shadow: none !important;
     text-transform: uppercase;
-    outline: none;
-    
+    outline: none !important;
+   
 }
-.button-container {
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    
-}
+
 .btn-round {
     border-radius: 50px;
-    
 }
 
 .btn-custom{
@@ -242,7 +233,6 @@ button:focus {
 
 .btn-outline-custom {
     border: 2px solid #f5f5f5;
-    
 }
 
 .btn-outline-custom:hover,
@@ -258,10 +248,17 @@ button:focus {
     background-color: #fff;
     border-color: #fff;
 }
-.a.btn.btn-outline-custom.btn-round{
-  
-    align-items: baseline;
+
+.bg-overlay {
+    background-color: rgba(0, 0, 0, 0.69);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
 }
+
+
 /*==========================
         3.NAVBAR CUSTOM
 ============================*/
@@ -343,34 +340,25 @@ button:focus {
 =============================*/
 
 .header-bg-img {
-    background-image: url('../images/Banner Paisagem Lavagem A Seco Poltronas E Sofás Moderno Azul E Branco (1).svg');
+    background-image: url(../images/26-11-750x410.png);
+    position: relative;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
+    background-position: center center;
 }
+
 .header-content {
-    position: relative;
-    z-index: 2; 
-    text-align: center; 
+    max-width: 800px;
 }
 
 .header-name {
     font-size: 30px;
-    color: #fff; 
 }
 .header-desc {
     max-width: 500px;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.75) !important;
 }
-.mt-4.pt-2{
-    text-align: right;
-    padding-right: 22rem;
-}
-a:focus, button:focus {
-    outline: none;
-}
+
 .scroll_down {
     position: absolute;
     bottom: 5vh;
@@ -700,6 +688,8 @@ a:focus, button:focus {
     font-size: 16px;
 }
 
+
+
 .footer .footer-alt ul li a {
     border-radius: 50%;
     transition: all 0.5s;
@@ -720,6 +710,7 @@ a:focus, button:focus {
     color: #33accf;
     transition: all 0.5s;
 }
+
 
 /*===========================
         11.RESPONSIVE
@@ -747,31 +738,13 @@ a:focus, button:focus {
     .custom-nav .logo .logo-light {
         display: none;
     }
-    .curv-img {
-        position: absolute;
-        width: 100%;
-        bottom: 0px;
-        z-index: 1;
-    }
-    .curv-img svg {
-        display: block;
-    }
     .h-100vh {
         height: auto;
         padding: 120px 0 150px;
     }
     .header-bg-img {
         clip-path: none;
-        background-size: 100%;
-        top: -8rem;
-    }
-    .wave_sec {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-    }
-    .wave_sec svg {
-        height: 180px;
+        padding: 120px 0 150px;
     }
     .wave-home.h-100vh{
         height: auto;
@@ -782,28 +755,8 @@ a:focus, button:focus {
         line-height: 15px;
     }
     .header-name {
-        font-size: 20px;
+        font-size: 33px;
     }
-    .header-desc {
-        max-width: 100%;
-        font-size: 1rem;
-    }
-    .mt-4.pt-2 {
-        text-align: center;
-        padding-left: 17rem;
-        margin-top: -20px; 
-        transform: translateY(-70px); 
-    }
-
-    .mt-4.pt-2 .btn {
-        font-size: 11px; /* Tamanho menor do botão */
-        padding: 9px 16px; /* Menor espaçamento interno */
-    }
-
-    .scroll_down {
-        bottom: 3vh; /* Ajusta a posição para não ficar tão baixo */
-    }
-
     .clip-home{
         clip-path: none;
     }
@@ -820,6 +773,7 @@ a:focus, button:focus {
         max-width: 1140px !important;
     }
 }
+
 
 #color-switcher div h3 {
     font-size: 16px;

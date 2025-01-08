@@ -204,9 +204,9 @@ button:focus {
     transition: all 0.5s;
     letter-spacing: 0.8px;
     color: #fff;
-    box-shadow: none !important;
+    box-shadow: none;
     text-transform: uppercase;
-    outline: none !important;
+    outline: none;
    
 }
 
@@ -248,17 +248,10 @@ button:focus {
     background-color: #fff;
     border-color: #fff;
 }
-
-.bg-overlay {
-    background-color: rgba(0, 0, 0, 0.69);
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
+.a.btn.btn-outline-custom.btn-round{
+  
+    align-items: baseline;
 }
-
-
 /*==========================
         3.NAVBAR CUSTOM
 ============================*/
@@ -340,25 +333,34 @@ button:focus {
 =============================*/
 
 .header-bg-img {
-    background-image: url(../images/26-11-750x410.png);
-    position: relative;
+    background-image: url('../images/Banner Paisagem Lavagem A Seco Poltronas E Sofás Moderno Azul E Branco (1).svg');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
 }
-
 .header-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 2; 
+    text-align: center; 
 }
 
 .header-name {
     font-size: 30px;
+    color: #fff; 
 }
 .header-desc {
     max-width: 500px;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.75) !important;
+    color: rgba(255, 255, 255, 0.75);
 }
-
+.mt-4.pt-2{
+    text-align: right;
+    padding-right: 18rem;
+}
+a:focus, button:focus {
+    outline: none;
+}
 .scroll_down {
     position: absolute;
     bottom: 5vh;
@@ -688,8 +690,6 @@ button:focus {
     font-size: 16px;
 }
 
-
-
 .footer .footer-alt ul li a {
     border-radius: 50%;
     transition: all 0.5s;
@@ -738,13 +738,31 @@ button:focus {
     .custom-nav .logo .logo-light {
         display: none;
     }
+     .curv-img {
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        z-index: 1;
+    }
+    .curv-img svg {
+        display: block;
+    }
     .h-100vh {
         height: auto;
         padding: 120px 0 150px;
     }
     .header-bg-img {
         clip-path: none;
-        padding: 120px 0 150px;
+        background-size: 100%;
+        top: -8rem;
+    }
+    .wave_sec {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .wave_sec svg {
+        height: 180px;
     }
     .wave-home.h-100vh{
         height: auto;
@@ -755,8 +773,28 @@ button:focus {
         line-height: 15px;
     }
     .header-name {
-        font-size: 33px;
+        font-size: 20px;
     }
+    .header-desc {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    .mt-4.pt-2 {
+        text-align: center;
+        padding-left: 17rem;
+        margin-top: -20px; 
+        transform: translateY(-70px); 
+    }
+
+    .mt-4.pt-2 .btn {
+        font-size: 11px; /* Tamanho menor do botão */
+        padding: 9px 16px; /* Menor espaçamento interno */
+    }
+
+    .scroll_down {
+        bottom: 3vh; /* Ajusta a posição para não ficar tão baixo */
+    }
+
     .clip-home{
         clip-path: none;
     }

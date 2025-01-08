@@ -212,7 +212,7 @@ button:focus {
 }
 .button-container {
     position: absolute;
-    bottom: 5%; /* Ajuste conforme necessário para alinhar o botão ao local do box */
+    bottom: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
@@ -366,7 +366,7 @@ button:focus {
 }
 .mt-4.pt-2{
     text-align: right;
-    padding-right: 18rem;
+    padding-right: 22rem;
 }
 a:focus, button:focus {
     outline: none;

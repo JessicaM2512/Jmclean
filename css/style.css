@@ -209,7 +209,6 @@ button:focus {
     outline: none !important;
    
 }
-
 .btn-round {
     border-radius: 50px;
 }
@@ -340,23 +339,40 @@ button:focus {
 =============================*/
 
 .header-bg-img {
-    background-image: url(../images/Banner\ Paisagem\ Lavagem\ A\ Seco\ Poltronas\ E\ Sofás\ Moderno\ Azul\ E\ Branco_20250108_004614_0000.jpg);
+    background-image: url(../images/Banner\ Paisagem\ Lavagem\ A\ Seco\ Poltronas\ E\ Sofás\ Moderno\ Azul\ E\ Branco\ \(1\).svg);
     position: relative;
     background-size: cover;
     background-position: center center;
+    
 }
 
 .header-content {
-    max-width: 800px;
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima da sobreposição */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    height: auto;
+    width: auto;
 }
 
 .header-name {
     font-size: 30px;
+    text-align: center;
+    
 }
 .header-desc {
     max-width: 500px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.75) !important;
+}
+.mt-4.pt-2{
+    position: absolute;
+    bottom: 17%;
+    right: 30%; 
 }
 
 .scroll_down {
@@ -364,11 +380,12 @@ button:focus {
     bottom: 5vh;
     width: 100%;
     text-align: center;
+    left: 9rem;
     color: #fff;
     font-size: 13px;
     z-index: 8;
+   
 }
-
 .scroll_down i {
     position: relative;
     -webkit-animation: bounce 2s infinite; 
@@ -382,6 +399,7 @@ button:focus {
     color: #fff;
     font-size: 10px;
 }
+
 
 .scroll_down i:after {
     content: "";
@@ -729,7 +747,7 @@ button:focus {
 
     .custom-nav .logo .logo-dark {
         display: inline-block;
-       height: 80px;
+        height: 80px;
       
     }
     .custom-nav .navbar-nav li a {
@@ -742,9 +760,36 @@ button:focus {
         height: auto;
         padding: 120px 0 150px;
     }
+    .mt-4.pt-2{
+        bottom: 7rem;
+        right: 5rem;
+    }
+    .btn-outline-custom {
+        padding: 5px 5px; /* Reduzir o tamanho do botão */
+        font-size: 10px; /* Ajustar tamanho do texto */
+        border-radius: 25px;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        transition: all 0.3s;
+    }
+    .btn-outline-custom:hover {
+        background-color: #ffffff;
+        color: rgb(2, 2, 2);
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        box-shadow: none !important;
+
+        outline: none !important;
+    }
+   
+    .header-content .mt-4 {
+        text-align: center;
+    }
+
     .header-bg-img {
         clip-path: none;
-        padding: 120px 0 150px;
+        padding: 180px 0 130px;
+        background-size: contain;
     }
     .wave-home.h-100vh{
         height: auto;
@@ -759,6 +804,19 @@ button:focus {
     }
     .clip-home{
         clip-path: none;
+    }
+    .scroll_down {
+        position: absolute;
+        bottom: 5vh;
+        width: 100%;
+        text-align: center;
+        left: 1.5rem;
+        color: #fff;
+        font-size: 10px;
+        z-index: 8;
+    }
+    .scroll_down a.scroll i {
+        font-size: 24px;
     }
 }
 

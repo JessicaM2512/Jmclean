@@ -338,14 +338,15 @@ button:focus {
         4.HOME
 =============================*/
 
+/* Seção de fundo */
 .header-bg-img {
-    background-image: url(../images/Banner\ Paisagem\ Lavagem\ A\ Seco\ Poltronas\ E\ Sofás\ Moderno\ Azul\ E\ Branco\ \(1\).svg);
+    background-image: url(../images/Banner\ Paisagem\ Lavagem\ A\ Seco\ Poltronas\ E\ Sofás\ Moderno\ Azul\ E\ Branco.svg);
     position: relative;
     background-size: cover;
     background-position: center center;
-    
 }
 
+/* Conteúdo do cabeçalho */
 .header-content {
     position: relative;
     z-index: 2; /* Garante que o conteúdo fique acima da sobreposição */
@@ -359,60 +360,111 @@ button:focus {
     width: auto;
 }
 
+/* Estilo do nome */
 .header-name {
     font-size: 30px;
     text-align: center;
-    
 }
+/* Estilo da descrição */
 .header-desc {
     max-width: 500px;
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.75) !important;
 }
-.mt-4.pt-2{
+
+/* Ajuste da posição do botão */
+.mt-4.pt-2 {
     position: absolute;
     bottom: 17%;
-    right: 30%; 
+    right: 30%;
 }
-
-.scroll_down {
-    position: absolute;
-    bottom: 5vh;
-    width: 100%;
+/* Botão animado */
+.button {
+    min-width: 250px; /* Reduz a largura mínima */
+    min-height: 50px; /* Reduz a altura mínima */
+    display: inline-flex;
+    font-family: 'Nunito', sans-serif;
+    font-size: 18px;  /* Ajusta o tamanho da fonte */
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
     text-align: center;
-    left: 9rem;
-    color: #fff;
-    font-size: 13px;
-    z-index: 8;
-   
-}
-.scroll_down i {
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #fff; /* Letras brancas */
+    background: transparent; /* Fundo transparente */
+    border: 2px solid #fff; /* Borda branca */
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px #fff;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
     position: relative;
-    -webkit-animation: bounce 2s infinite; 
-    animation: bounce 2s infinite; 
-    height: 44px;
-    width: 28px;
-    line-height: 54px;
-    border-radius: 30px;
-    border: 2px solid #ffffff;
-    display: inline-block;
-    color: #fff;
-    font-size: 10px;
+    padding: 10px;
 }
 
 
-.scroll_down i:after {
-    content: "";
+/* Animação ao passar o mouse */
+.button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(250px + 12px); /* Ajusta o tamanho */
+    min-height: calc(50px + 12px); /* Ajusta o tamanho */
+    border: 6px solid #fff; /* Borda branca */
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.64); /* Pulsação branca */
     position: absolute;
-    top: 22px;
-    left: 11px;
-    border-radius: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+/* Efeito ao passar o mouse */
+.button:hover,
+.button:focus {
+    color: #fff; /* Letras brancas */
+    transform: translateY(-6px);
+}
+
+.button:hover::before,
+.button:focus::before {
+    opacity: 1;
+}
+
+/* Animação de onda */
+.button::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #fff; /* Borda branca */
+    position: absolute;
     z-index: -1;
-    bottom: 0px;
-    transition: all .2s;
-    height: 10px;
-    width: 3px;
-    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+.button:hover::after,
+.button:focus::after {
+    animation: none;
+    display: none;
+}
+
+/* Keyframes para o efeito de onda */
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
 }
 
 
@@ -434,18 +486,6 @@ button:focus {
 .clip-home {
     clip-path: polygon(0 0, 100% 0, 100% 83%, 50% 100%, 0 83%);
     position: relative;
-}
-
-/*DEMO 16*/
-
-.wave_sec {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.wave_sec svg {
-  height: 180px;
 }
 
 /*===========================
@@ -747,7 +787,7 @@ button:focus {
 
     .custom-nav .logo .logo-dark {
         display: inline-block;
-        height: 80px;
+       height: 80px;
       
     }
     .custom-nav .navbar-nav li a {
@@ -760,37 +800,26 @@ button:focus {
         height: auto;
         padding: 120px 0 150px;
     }
-    .mt-4.pt-2{
-        bottom: 7rem;
-        right: 5rem;
-    }
-    .btn-outline-custom {
-        padding: 5px 5px; /* Reduzir o tamanho do botão */
-        font-size: 10px; /* Ajustar tamanho do texto */
-        border-radius: 25px;
-        border: 2px solid #ffffff;
-        color: #ffffff;
-        transition: all 0.3s;
-    }
-    .btn-outline-custom:hover {
-        background-color: #ffffff;
-        color: rgb(2, 2, 2);
-        letter-spacing: 0.8px;
-        text-transform: uppercase;
-        box-shadow: none !important;
-
-        outline: none !important;
-    }
-   
-    .header-content .mt-4 {
-        text-align: center;
-    }
-
     .header-bg-img {
         clip-path: none;
-        padding: 180px 0 130px;
-        background-size: contain;
+        padding: 120px 0 150px;
     }
+    .button {
+        min-width: 200px; /* Ajusta a largura mínima */
+        min-height: 50px; /* Ajusta a altura mínima */
+        font-size: 18px;  /* Ajusta o tamanho da fonte */
+    }
+
+    .button::before {
+        min-width: calc(200px + 12px);
+        min-height: calc(50px + 12px);
+    }
+
+    .button::after {
+        width: 20px;
+        height: 20px;
+    }
+
     .wave-home.h-100vh{
         height: auto;
         padding: 120px 0 190px;
@@ -805,21 +834,27 @@ button:focus {
     .clip-home{
         clip-path: none;
     }
-    .scroll_down {
-        position: absolute;
-        bottom: 5vh;
-        width: 100%;
-        text-align: center;
-        left: 1.5rem;
-        color: #fff;
-        font-size: 10px;
-        z-index: 8;
+
+}
+/* Responsividade para telas muito pequenas (ex.: smartphones) */
+@media (max-width: 480px) {
+    .button {
+        min-width: 160px; /* Mais compacto em dispositivos muito pequenos */
+        min-height: 45px;
+        font-size: 11px;
+        left: 5rem;
     }
-    .scroll_down a.scroll i {
-        font-size: 24px;
+
+    .button::before {
+        min-width: calc(180px + 12px);
+        min-height: calc(45px + 12px);
+    }
+
+    .button::after {
+        width: 15px;
+        height: 15px;
     }
 }
-
 @media (max-width: 2560px) {
     .home-bg .curv-img {
         bottom: -5px;
@@ -831,7 +866,6 @@ button:focus {
         max-width: 1140px !important;
     }
 }
-
 
 #color-switcher div h3 {
     font-size: 16px;

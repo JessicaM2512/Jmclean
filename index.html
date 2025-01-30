@@ -80,6 +80,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	                <li class="nav-item">
 	                    <a class="nav-link" href="#client">Avaliações</a>
 	                </li>
+                    <li class="nav-item">
+	                    <a class="nav-link" href="#perguntas">Perguntas frequentes</a>
+	                </li>
 	                <li class="nav-item">
 	                    <a class="nav-link" href="#contact">Contato</a>
 	                </li>
@@ -90,27 +93,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<!-- End Navbar -->
     <!-- START HOME -->
     <section class="section header-bg-img h-100vh align-items-center d-flex" id="home">
-    <div class="bg-overlay"></div>
-    <div class="container z-index">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="text-center header-content mx-auto" data-aos="fade-up"></div>
-                <div class="mt-4 pt-2">
-                    <!-- Botão com animação -->
-                    <a href="https://api.whatsapp.com/send?phone=5581981907781&text=Ol%C3%A1%2C%20vim%20pelo%20Google%20ads%20gostaria%20de%20um%20or%C3%A7amento."
-                       class="button">
-                        Faça seu orçamento!
-                    </a>
+        <div class="bg-overlay"></div> <!-- Overlay para escurecimento (ajustado no CSS) -->
+        <div class="container z-index">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="text-center header-content mx-auto" data-aos="fade-up">
+                        <!-- O texto foi removido aqui -->
+                    </div>
+                    <div class="mt-4 pt-2">
+                        <!-- Botão com animação -->
+                        <a href="https://api.whatsapp.com/send?phone=5581981907781&text=Ol%C3%A1%2C%20vim%20pelo%20Google%20ads%20gostaria%20de%20um%20or%C3%A7amento."
+                           class="button">
+                            Faça seu orçamento!
+                        </a>
+                    </div>
                 </div>
             </div>
+        </div>            
+        <div class="scroll_down" data-aos="fade-up">
+            <a href="#about" class="scroll">
+                <i class="text-white"></i>
+            </a>
         </div>
-    </div>            
-    <div class="scroll_down" data-aos="fade-up">
-        <a href="#about" class="scroll">
-            <i class="text-white"></i>
-        </a>
-    </div>
-</section>
+    </section>
     <!-- END HOME -->
     <!-- START SERVICES -->
 <section class="section bg-light" id="services">
@@ -345,13 +350,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
                         <div class="elfsight-app-92c53236-abc6-49a8-95f6-5eecec891006" data-elfsight-app-lazy></div>
                     </div>
-        
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- END CLIENT -->
+  <!--START PERGUNTAS-->
+<section class="faq-wrapper" id="perguntas">
+    <div class="row justify-content-center">
+        <div class="col-lg-12">
+           <div class="faq-title text-center" data-aos="fade-up">
+             <h2><span class="fw-bold">Perguntas Frequentes</span></h2>
+           </div>
+       </div>
+    </div>
+    <div class="faq-container" id="faqContainer">
+        <div class="faq-item">
+            <div class="faq-question">Quais são os benefícios da higienização de estofados?</div>
+            <div class="faq-answer">A higienização remove ácaros, fungos, bactérias e sujeira acumulada, melhorando a saúde e prolongando a vida útil do estofado.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Com que frequência devo higienizar meu estofado?</div>
+            <div class="faq-answer">Recomenda-se a higienização a cada 6 meses para garantir a limpeza e conservação do estofado.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Os produtos utilizados são seguros?</div>
+            <div class="faq-answer">Sim, utilizamos produtos biodegradáveis e hipoalergênicos, seguros para crianças e animais de estimação.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Quanto tempo demora para o estofado secar?</div>
+            <div class="faq-answer">O tempo de secagem varia entre 4 a 8 horas, dependendo da ventilação do ambiente.</div>
+        </div>
+    </div>
+ </div>
+</section>  
+<!--END PERGUNTAS-->
+<script>
+   document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+        let parent = item.parentNode;
+        parent.classList.toggle('active');
+        let answer = parent.querySelector('.faq-answer');
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+
+function onScrollReveal() {
+    const faqContainer = document.getElementById('faqContainer');
+    const rect = faqContainer.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+        faqContainer.classList.add('show');
+        window.removeEventListener('scroll', onScrollReveal);
+    }
+}
+
+window.addEventListener('scroll', onScrollReveal);
+onScrollReveal();
+</script>
     <!-- START CONTACT -->
     <section class="section" id="contact">
         <div class="container">

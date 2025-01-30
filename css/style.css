@@ -16,6 +16,7 @@
     6.SERVICES
     7.CLIENT
     8.WORK
+      CTA
     9.CONTACT
     10.FOOTER
     11.RESPONSIVE
@@ -575,20 +576,12 @@ button:focus {
     color: #337ab7;
   }
 
-.testi_boxes {
-    max-width: 750px;
-}
-
-.client_review {
-    font-size: 18px;
-}
-
-.client_name {
-    font-size: 16px;
-}
-
-.img_testi img{
-    max-width: 110px;
+  .testi_boxes {
+    max-width: 800px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .testi_boxes .tam_testi_icon {
@@ -620,6 +613,7 @@ button:focus {
     border-radius: 20px;
     transition: all 0.5s;
 }
+
 
 
 /*===========================
@@ -713,6 +707,69 @@ button:focus {
     transform: scale(1.05);
 }
 
+ /*=========================
+            CTA
+===========================*/
+ 
+/* Seção CTA */
+.cta-section {
+    position: relative;
+    background: url('../images/familia.png') no-repeat center center/cover;
+    width: 100%;
+    padding: 80px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container centralizado */
+.cta-container {
+    width: 80%;
+    max-width: 900px;
+}
+
+/* Caixa do CTA com efeito de fundo */
+.cta-box {
+    background: #0096ffcc; /* Azul com transparência */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Título do CTA */
+.cta-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Texto do CTA */
+.cta-text {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Botão do CTA */
+.cta-button {
+    display: inline-block;
+    background: #0d6dfd;
+    color: white;
+    padding: 15px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+/* Efeito hover no botão */
+.cta-button:hover {
+    background:#fff;
+    color:#0d6dfd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
 /*=========================
         9.CONTACT

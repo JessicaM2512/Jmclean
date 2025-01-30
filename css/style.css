@@ -16,7 +16,6 @@
     6.SERVICES
     7.CLIENT
     8.WORK
-      CTA
     9.CONTACT
     10.FOOTER
     11.RESPONSIVE
@@ -54,11 +53,11 @@ button:focus {
 }
 
 ::selection {
-    background: rgba(166, 175, 189, 0.3);
+    background: rgba(8, 8, 8, 0.3);
 }
 
 ::-moz-selection {
-    background: rgba(166, 175, 189, 0.3);
+    background: rgba(7, 7, 7, 0.3);
 }
 
 #preloader {
@@ -284,7 +283,7 @@ button:focus {
     font-weight: 500;
 }
 .custom-nav .navbar-nav li a.active{
-    color: rgb(13, 110, 253) !important;
+    color: #0d6dfd !important;
 }
 
 .custom-nav .navbar-brand .logo-light{
@@ -339,12 +338,26 @@ button:focus {
         4.HOME
 =============================*/
 
-/* Seção de fundo */
 .header-bg-img {
     background-image: url(../images/Banner\ Paisagem\ Lavagem\ A\ Seco\ Poltronas\ E\ Sofás\ Moderno\ Azul\ E\ Branco\ \(1\).jpg);
     position: relative;
-    background-size: cover;
-    background-position: center center;
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir toda a área */
+    background-position: center center; /* Centra a imagem */
+    background-repeat: no-repeat;
+    height: 100vh; /* Garante que a altura da imagem ocupe toda a altura da tela */
+    width: 100%; /* Garantir que ocupe toda a largura */
+    background-attachment: fixed; /* Para dispositivos móveis, desative este efeito, pois pode afetar a performance */
+}
+
+/* Sobreposição da imagem (ajuste de tonalidade e claridade) */
+.bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Alterar a cor da sobreposição para escurecer levemente a imagem */
+    z-index: 1;
 }
 
 /* Conteúdo do cabeçalho */
@@ -366,11 +379,12 @@ button:focus {
     font-size: 30px;
     text-align: center;
 }
+
 /* Estilo da descrição */
 .header-desc {
     max-width: 500px;
     line-height: 1.8;
-    color: rgba(255, 255, 255, 0.75) !important;
+    color: rgba(255, 255, 255, 0.9) !important; /* Tornar o texto mais visível com 90% de opacidade */
 }
 
 /* Ajuste da posição do botão */
@@ -379,6 +393,7 @@ button:focus {
     bottom: 17%;
     right: 30%;
 }
+
 /* Botão animado */
 .button {
     min-width: 250px; /* Reduz a largura mínima */
@@ -403,7 +418,6 @@ button:focus {
     position: relative;
     padding: 10px;
 }
-
 
 /* Animação ao passar o mouse */
 .button::before {
@@ -468,7 +482,6 @@ button:focus {
     }
 }
 
-
 /*HOME 4*/
 
 .curv-img {
@@ -488,6 +501,7 @@ button:focus {
     clip-path: polygon(0 0, 100% 0, 100% 83%, 50% 100%, 0 83%);
     position: relative;
 }
+
 
 /*===========================
         5.ABOUT
@@ -615,7 +629,6 @@ button:focus {
 }
 
 
-
 /*===========================
         8.WORK
 =============================*/
@@ -706,7 +719,6 @@ button:focus {
 .work_box:hover .work_img>img {
     transform: scale(1.05);
 }
-
  /*=========================
             CTA
 ===========================*/
@@ -769,8 +781,152 @@ button:focus {
     background:#fff;
     color:#0d6dfd;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+} 
+/*=========================
+        PERGUNTAS
+===========================*/
+/* Estilos da seção Perguntas Frequentes */
+.faq-wrapper {
+    padding: 50px 0;
+    background-color: rgba(248, 249, 250, 0.9);
+    border-radius: 8px;
+    max-width: 900px;
+    margin: auto;
+    position: relative;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 -3px 6px rgba(0, 0, 0, 0.08); /* Efeito de sombra 3D */
+    margin-top: 20px; /* Espaçamento do título */
 }
 
+/* Estilos do título das Perguntas Frequentes */
+.faq-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Estilos do container principal das perguntas frequentes */
+.faq-container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.1); /* Efeito 3D para o container */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Efeito de mostrar o container ao rolar a página */
+.faq-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos das perguntas e respostas */
+.faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* Estilos das perguntas */
+.faq-question {
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+/* Hover nas perguntas */
+.faq-question:hover {
+    color: #0056b3; /* Cor de hover para as perguntas */
+}
+
+/* Respostas escondidas inicialmente */
+.faq-answer {
+    display: none;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Indicador de expandir/collapse nas perguntas */
+.faq-question::after {
+    content: '+';
+    font-size: 20px;
+    transition: transform 0.3s, content 0.3s;
+}
+
+/* Modificação quando a pergunta estiver expandida */
+.faq-item.active .faq-question::after {
+    content: '-';
+}
+
+/* Exibe a resposta quando a pergunta é clicada */
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Cor da pergunta expandida */
+.faq-item.active .faq-question {
+    color: #0056b3; /* Cor da pergunta quando está expandida */
+}
+
+/* Media Queries para tornar o layout responsivo */
+
+/* Para telas menores que 768px (tablets e smartphones maiores) */
+@media (max-width: 768px) {
+    .faq-wrapper {
+        padding: 30px 15px;
+    }
+
+    .faq-title {
+        font-size: 2rem; /* Tamanho do título reduzido */
+    }
+
+    .faq-container {
+        width: 90%; /* Aumenta a largura do container para ocupar mais espaço */
+        padding: 15px;
+    }
+
+    .faq-question {
+        font-size: 16px; /* Tamanho da fonte da pergunta ajustado */
+    }
+
+    .faq-answer {
+        font-size: 14px; /* Tamanho da fonte da resposta ajustado */
+    }
+}
+
+/* Para telas menores que 480px (smartphones em modo retrato) */
+@media (max-width: 480px) {
+    .faq-wrapper {
+        padding: 20px 10px;
+    }
+
+    .faq-title {
+        font-size: 1.8rem; /* Tamanho do título reduzido para dispositivos muito pequenos */
+    }
+
+    .faq-container {
+        width: 100%; /* O container ocupa toda a largura da tela */
+        padding: 10px;
+    }
+
+    .faq-question {
+        font-size: 14px; /* Tamanho da fonte das perguntas ajustado */
+    }
+
+    .faq-answer {
+        font-size: 12px; /* Tamanho da fonte das respostas ajustado */
+    }
+}
 /*=========================
         9.CONTACT
 ===========================*/
@@ -855,18 +1011,40 @@ button:focus {
     }
     .h-100vh {
         height: auto;
-        padding: 120px 0 150px;
+        padding: 120px 0px 170px;
     }
-    .header-bg-img {
-        clip-path: none;
-        padding: 120px 0 150px;
-    }
-    .button {
-        min-width: 200px; /* Ajusta a largura mínima */
-        min-height: 50px; /* Ajusta a altura mínima */
-        font-size: 18px;  /* Ajusta o tamanho da fonte */
+    .header-content {
+        padding: 10px;
     }
 
+    .header-name {
+        font-size: 24px;
+    }
+    .header-bg-img {
+        background-size: contain;
+        height: 40vh; /* Ajusta para ocupar toda a altura da tela, sem cortar */
+        background-attachment: scroll; /* Evita o efeito de parallax em dispositivos móveis */
+
+    }
+    .bg-overlay {
+        display: none; /* Retira a sobreposição cinza em dispositivos móveis */
+    }
+
+    .header-desc {
+        font-size: 14px;
+        max-width: 80%;
+    }
+    .mt-4.pt-2 {
+        bottom: 20%;
+        left: 36%;
+        transform: translateX(-50%);
+    }
+    .button {
+        min-width: 180px; /* Botão mais estreito para dispositivos móveis */
+        min-height: 40px; /* Botão mais baixo */
+        font-size: 16px;  /* Fonte menor para dispositivos móveis */
+        padding: 2px; /* Ajuste o espaçamento interno */
+    }
     .button::before {
         min-width: calc(200px + 12px);
         min-height: calc(50px + 12px);
@@ -884,9 +1062,6 @@ button:focus {
     .custom-nav .navbar-nav li a {
         margin: 0 0px;
         line-height: 15px;
-    }
-    .header-name {
-        font-size: 33px;
     }
     .clip-home{
         clip-path: none;

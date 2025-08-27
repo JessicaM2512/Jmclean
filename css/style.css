@@ -17,8 +17,9 @@
     7.CLIENT
     8.WORK
     9.CONTACT
-    10.FOOTER
-    11.RESPONSIVE
+    10.PERGUNTAS
+    11.FOOTER
+    12.RESPONSIVE
 ************************/
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600|Nunito:400,600,700');
@@ -29,7 +30,7 @@
 ========================*/
 
 html,body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
     overflow-x: hidden !important;
 }
 
@@ -249,7 +250,7 @@ button:focus {
 }
 
 .bg-overlay {
-    background-color: rgba(0, 0, 0, 0.69);
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)); /* Gradiente para melhor leitura */
     position: absolute;
     top: 0;
     right: 0;
@@ -525,47 +526,129 @@ button:focus {
         6.SERVICES
 =============================*/
 
+/*===========================
+        SERVICES
+=============================*/
+
 .services-boxes {
-    border: 1px solid #33accf ;
+  border: none;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures buttons are aligned at the bottom */
+  min-height: 350px; /* Adjust as necessary */
 }
 
-.services-boxes .services-boxes-icon i {
-    font-size: 44px;
-    
+.services-boxes:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-.services-boxes .services-title-border {
-    height: 2px;
-    width: 40px;
-    margin: 15px auto;
-    transition: all 0.5s;
-    background-color: #33accf;
-   
+/* Barrinha azul abaixo do título */
+.services-title-border {
+  height: 3px;
+  width: 40px;
+  margin: 12px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #0066ff;
+  border-radius: 4px;
 }
 
 .services-boxes:hover .services-title-border {
-    width: 60px;
-    background-color: #33accf;
+  width: 60px;
+  background-color: #0066ff;
 }
 
-.service-box {
-    border: 1px solid #33accf;
-    border-radius: 8px;
-}
-
+/* Título */
 .services-boxes h5 {
-    font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 15px;
+  color: #222;
 }
 
-.service-box .service-content h5 {
-    font-size: 20px;
-    font-weight: 700;
+/* Texto */
+.services-boxes p {
+  font-size: 15px;
+  color: #555;
+  margin-top: 15px;
+  line-height: 1.6;
 }
 
-.service-box .service-content p {
-    font-size: 15px;
+/* Imagem ou vídeo */
+.card-video img,
+.card-video video {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 15px;
 }
 
+/* Botão "Saiba Mais" */
+.services-boxes .btn {
+  margin-top: 15px;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #fff;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.services-boxes .btn:hover {
+  background: #0066ff;
+  color: #fff;
+  border-color: #0066ff;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.3);
+}
+
+.btn-saiba {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #007bff; /* Azul */
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-saiba:hover {
+  background-color: #0056b3; /* Azul escuro no hover */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .services-boxes {
+    margin-bottom: 25px;
+  }
+  .card-video img,
+  .card-video video {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-video img,
+  .card-video video {
+    height: 180px;
+  }
+}
 /*===========================
         7.CLIENT
 =============================*/
@@ -719,6 +802,13 @@ button:focus {
 .work_box:hover .work_img>img {
     transform: scale(1.05);
 }
+
+.work_item img {
+    width: 100%; /* Ajusta a largura para 100% do contêiner */
+    height: auto; /* Mantém a proporção */
+    max-height: 200px; /* Define uma altura máxima */
+    object-fit: cover; /* Cobre o contêiner sem distorcer a imagem */
+}
  /*=========================
             CTA
 ===========================*/
@@ -785,165 +875,238 @@ button:focus {
 /*=========================
         PERGUNTAS
 ===========================*/
-/* Estilos da seção Perguntas Frequentes */
 .faq-wrapper {
     padding: 50px 0;
     background-color: rgba(248, 249, 250, 0.9);
-    border-radius: 8px;
+    border-radius: 12px;
     max-width: 900px;
     margin: auto;
     position: relative;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 -3px 6px rgba(0, 0, 0, 0.08); /* Efeito de sombra 3D */
-    margin-top: 20px; /* Espaçamento do título */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 -3px 6px rgba(0, 0, 0, 0.08);
+    margin-top: 20px;
 }
 
-/* Estilos do título das Perguntas Frequentes */
 .faq-title {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     font-size: 2.5rem;
     font-weight: bold;
     color: #333;
 }
 
-/* Estilos do container principal das perguntas frequentes */
+/* Container */
 .faq-container {
     max-width: 800px;
     margin: auto;
     background: #fff;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.1); /* Efeito 3D para o container */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* Efeito de mostrar o container ao rolar a página */
 .faq-container.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Estilos das perguntas e respostas */
+/* Item */
 .faq-item {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
 }
 
-/* Estilos das perguntas */
+.faq-item.active {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Pergunta */
 .faq-question {
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 600;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    transition: color 0.3s ease;
+    padding: 14px 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
 }
 
-/* Hover nas perguntas */
 .faq-question:hover {
-    color: #0056b3; /* Cor de hover para as perguntas */
+    background-color: rgba(0,86,179,0.08);
+    color: #0056b3;
 }
 
-/* Respostas escondidas inicialmente */
-.faq-answer {
-    display: none;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #555;
-}
-
-/* Indicador de expandir/collapse nas perguntas */
+/* Ícone animado */
 .faq-question::after {
-    content: '+';
+    content: "➕";
     font-size: 20px;
-    transition: transform 0.3s, content 0.3s;
+    transition: transform 0.3s ease;
 }
 
-/* Modificação quando a pergunta estiver expandida */
 .faq-item.active .faq-question::after {
-    content: '-';
+    content: "➖";
+    transform: rotate(180deg);
+    color: #0056b3;
 }
 
-/* Exibe a resposta quando a pergunta é clicada */
+/* Resposta animada */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 18px;
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
 .faq-item.active .faq-answer {
-    display: block;
+    max-height: 300px; /* Ajuste conforme conteúdo */
+    padding: 12px 18px 18px;
 }
 
-/* Cor da pergunta expandida */
-.faq-item.active .faq-question {
-    color: #0056b3; /* Cor da pergunta quando está expandida */
-}
-
-/* Media Queries para tornar o layout responsivo */
-
-/* Para telas menores que 768px (tablets e smartphones maiores) */
+/* Responsivo */
 @media (max-width: 768px) {
-    .faq-wrapper {
-        padding: 30px 15px;
-    }
-
-    .faq-title {
-        font-size: 2rem; /* Tamanho do título reduzido */
-    }
-
-    .faq-container {
-        width: 90%; /* Aumenta a largura do container para ocupar mais espaço */
-        padding: 15px;
-    }
-
-    .faq-question {
-        font-size: 16px; /* Tamanho da fonte da pergunta ajustado */
-    }
-
-    .faq-answer {
-        font-size: 14px; /* Tamanho da fonte da resposta ajustado */
-    }
+    .faq-title { font-size: 2rem; }
+    .faq-question { font-size: 16px; }
+    .faq-answer { font-size: 14px; }
 }
 
-/* Para telas menores que 480px (smartphones em modo retrato) */
 @media (max-width: 480px) {
-    .faq-wrapper {
-        padding: 20px 10px;
-    }
-
-    .faq-title {
-        font-size: 1.8rem; /* Tamanho do título reduzido para dispositivos muito pequenos */
-    }
-
-    .faq-container {
-        width: 100%; /* O container ocupa toda a largura da tela */
-        padding: 10px;
-    }
-
-    .faq-question {
-        font-size: 14px; /* Tamanho da fonte das perguntas ajustado */
-    }
-
-    .faq-answer {
-        font-size: 12px; /* Tamanho da fonte das respostas ajustado */
-    }
+    .faq-title { font-size: 1.6rem; }
+    .faq-question { font-size: 14px; }
+    .faq-answer { font-size: 12px; }
 }
+
 /*=========================
-        9.CONTACT
+        CONTACT SECTION
 ===========================*/
 
-.form-kerri .form-control {
-    box-shadow: none !important;
-    height: 50px;
-    margin-bottom: 14px;
-    border: 2px solid #e0e0e0;
+.contact-section {
+    padding: 60px 0;
+    background: #f9f9f9;
 }
 
-.form-kerri textarea.form-control {
-    height: auto;
+.contact-header {
+    background: #33accf;
+    color: #fff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin-bottom: 40px;
 }
 
-.contact_detail-title {
+.contact-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.contact-header p {
+    font-size: 16px;
+    max-width: 700px;
+    margin: 15px auto 0;
+}
+
+/* Força as colunas a terem mesma altura */
+.contact-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+
+.contact-section .col-lg-6 {
+    display: flex;
+}
+
+.contact-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.contact-box h4 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Ícones e textos */
+.contact-box p i {
+    margin-right: 8px;
+    color: #33accf;
     font-size: 18px;
+}
+
+.contact-box p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Map ocupa espaço extra para alinhar com formulário */
+.contact-box .map-container {
+    flex-grow: 1;
+    display: flex;
+    margin-top: auto;
+}
+
+.contact-box .map-container iframe {
+    flex: 1;
+    border-radius: 10px;
+}
+
+/* Formulário */
+.contact-box .form-control {
+    height: 50px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.contact-box .form-control:focus {
+    border-color: #33accf;
+    box-shadow: 0 0 8px rgba(51, 172, 207, 0.2);
+}
+
+.contact-box textarea.form-control {
+    height: 120px;
+    resize: none;
+    padding: 12px 15px;
+}
+
+/* Botão */
+.btn-custom {
+    background: #33accf;
+    color: #fff;
+    padding: 14px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-custom:hover {
+    background: #289ab0;
+    transform: translateY(-2px);
 }
 
 /*======================
@@ -983,9 +1146,12 @@ button:focus {
 }
 
 
-/*===========================
-        11.RESPONSIVE
-=============================*/
+/* Standard size for Avaliações images */
+.testi_boxes img {
+    width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Set a maximum width */
+}
 
 @media (min-width: 200px) and (max-width: 768px) {
     .custom-nav {
